@@ -18,7 +18,7 @@ if ( isset( $_GET["screen_name"] )
 $fs_is_showID = true;
 if ( isset( $_GET["screen_name"] ) )
 {	$fs_is_showID = false;
-
+}
 
 $token = 'XXXX';
 $token_secret = 'XXXX';
