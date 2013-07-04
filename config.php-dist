@@ -1,6 +1,25 @@
 <?php
 //v1.1
 
+// fivestone: add password check, without "&pw=xxxx" behind the url you will get nothing
+$fs_password='xxxx';
+if ( $fs_password != $_GET["pw"] )
+{	exit;
+}
+
+// fivestone: add white list check, only user in the list can use the screen_name function
+$fs_user_whitelist = array('fivestone','others');
+if ( isset( $_GET["screen_name"] ) 
+	&& !in_array($_GET["screen_name"], $fs_user_whitelist))
+{	exit;
+}
+
+// fivestone: add option to filter screen_name in RSS title and content
+$fs_is_showID = true;
+if ( isset( $_GET["screen_name"] ) )
+{	$fs_is_showID = false;
+
+
 $token = 'XXXX';
 $token_secret = 'XXXX';
 $consumer_key = 'XXXX';
